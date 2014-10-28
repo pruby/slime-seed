@@ -10,7 +10,10 @@ slime chunks
 # Fenced off, well lit areas containing only a single chunk are useful
 # for this.
 
-# Enter chunk coordinates where slimes seen (positive and negative) like this:
+# Enter chunk coordinates where slimes seen (positive observations) like this:
 cx+12 cz-14
 cx+0 cz-100
 cx-123 cz+123
+
+# We can't determine enough usefully from slimes *not* appearing somewhere -
+# ignore this.
