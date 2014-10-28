@@ -82,7 +82,7 @@ int main(int argc, char** argv) {
 #ifdef LOWER_BIT_PREFILTER
   calculate_lower_bits_series(chunks.chunk_values, chunks.num_chunks, chunks.required_hits, &lower_bits_series, &lower_bits_count);
   
-  fprintf(stderr, "Filtering to %d options for lower bits (%0.9f%%)\n", lower_bits_count, (double) lower_bits_count / (double) 262144);
+  fprintf(stderr, "Filtering to %d options for lower 18 bits (%0.9f%%)\n", lower_bits_count, (double) lower_bits_count / (double) 262144);
 #endif
   
   run_state state;
