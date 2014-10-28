@@ -1,0 +1,16 @@
+slime chunks
+
+# First line is a marker, tells us we've got a file of the right type.
+
+# We provide the *chunk* X and Z coordinates in the exact
+# spot where a slime spawned. These can be seen as "cx" and "cz"
+# in the F3 debug screen.
+# 
+# Note they can move, you need the spot where they initially appeared.
+# Fenced off, well lit areas containing only a single chunk are useful
+# for this.
+
+# Enter chunk coordinates where slimes seen (positive and negative) like this:
+cx+12 cz-14
+cx+0 cz-100
+cx-123 cz+123
