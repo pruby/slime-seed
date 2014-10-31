@@ -21,9 +21,10 @@ map_slime_chunks: map_slime_chunks.o slime_algo.o
 	 gcc ${CFLAGS} ${LDFLAGS} -o $@ $^ -lm
 
 clean:
-	rm -f slime_seed map_slime_chunks expand48to64random *.o slime_chunks.c *.seeds *.pgm *.png
+	rm -f slime_seed map_slime_chunks expand48to64random *.o slime_chunks.c slime_seed.zip *.seeds *.pgm *.png *~
 
 dist: clean slime_chunks.c
+	zip slime_seed.zip *
 
 run:
 	@echo

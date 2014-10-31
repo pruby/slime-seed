@@ -22,6 +22,20 @@ THE SOFTWARE.
 
 #ifndef SLIME_ALGO_H
 
+/* 
+ * Seed transform will speed up search almost 10 times.
+ * This makes the first chunk provided compulsory - seeds without it won't
+ * be listed. It does this by iterating multiples of 10, and finding the
+ * unique seed that will produce that number at the first chunk's location.
+ * With this enabled, the first chunk should be 100% certain to spawn slimes.
+ */
+//#define SEED_TRANSFORM
+/*
+ * Lower bit prefilter is the most efficient way to search, each chunk added
+ * is used to speed the search up. Supports REQUIRED_HITS fully.
+ */
+#define LOWER_BIT_PREFILTER
+
 #include <stdint.h>
 
 long calc_chunk_val(long xPosition, long zPosition);
