@@ -1,7 +1,7 @@
 CFLAGS=-g -O
 LDFLAGS=-pthread
 
-default: all
+default: all run
 
 all: slime_seed expand48to64random map_slime_chunks 
 
@@ -25,7 +25,7 @@ clean:
 
 dist: clean slime_chunks.c
 
-run: slime_seed expand48to64random map_slime_chunks
+run:
 	@echo
 	@echo '***' Generating 48-bit suffixes...
 	@echo
@@ -40,5 +40,5 @@ run: slime_seed expand48to64random map_slime_chunks
 	@echo
 	@echo '***' Finding likely 64 bit seeds for 48-bit suffixes...
 	@echo
-	./expand48to64random < output.seeds > likely.seeds
+	./expand48to64random < output.seeds | sort -n > likely.seeds
 

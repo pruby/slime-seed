@@ -4,11 +4,12 @@ slime chunks
 
 # We provide the *chunk* X and Z coordinates in the exact
 # spot where a slime spawned. These can be seen as "cx" and "cz"
-# in the F3 debug screen.
+# in the F3 debug screen. These are a 16th of the x and z coordinates
+# so don't put those in by mistake!
 # 
-# Note they can move, you need the spot where they initially appeared.
+# Note they can move, you need the spot where they spawn, not move to.
 # Fenced off, well lit areas containing only a single chunk are useful
-# for this.
+# for confirming that they did in fact spawn within a given chunk.
 
 # Enter chunk coordinates where slimes seen (positive observations) like this:
 cx+12 cz-14
@@ -16,4 +17,4 @@ cx+0 cz-100
 cx-123 cz+123
 
 # We can't determine enough usefully from slimes *not* appearing somewhere -
-# ignore this.
+# ignore chunks where they don't appear.

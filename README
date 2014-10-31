@@ -11,15 +11,17 @@ To compile this you will need:
 
 The tool can be compiled with GCC by running:
 
-    make
+    make all
 
-To make from a clean git repository, you will also need:
+This is normally packaged with the parser pre-generated. To make from a clean git
+repository, you will also need:
 
   * Ragel: http://www.complang.org/ragel/
 
-You can then do a run against a list of known spawning chunks for any given world
-in "chunks.txt". These must be filled in with observations for the world whose seed
-you want to find.
+You should then add a list of chunks where slimes are known to spawn *below Y level
+40* to the file "chunks.txt". Don't include places where they appear in swamps above
+Y level 40. These should be definite observations - adding a chunk where they don't
+spawn will throw it off.
 
 From there, you can run it with:
 
