@@ -27,11 +27,11 @@ From there, you can run it with:
 
     make run
 
-The file output.seeds will be filled with at most 10,000 possible values for the
+The file output.suffixes will be filled with at most 10,000 possible values for the
 lower 48 bits of the seed. If there are more than 10,000 possibilities it will
 be cut short. You can get a full output (may be extremely large) with:
 
-    ./slime_seed > output.seeds
+    ./slime_seed > output.suffixes
 
 The map of how likely each chunk is now to spawn slimes will be output as a map
 file in map.png (map.pgm if "convert" utility from imagemagick not found). Each

@@ -30,16 +30,16 @@ run:
 	@echo
 	@echo '***' Generating 48-bit suffixes...
 	@echo
-	./slime_seed | head -n 10000 > output.seeds
+	./slime_seed | head -n 10000 > output.suffixes
 	@echo
-	@echo '...' `wc -l output.seeds | cut -d ' ' -f 1` results
+	@echo '...' `wc -l output.suffixes | cut -d ' ' -f 1` results
 	@echo
 	@echo '***' Generating map of slime pattern...
 	@echo
-	./map_slime_chunks < output.seeds > map.pgm
+	./map_slime_chunks < output.suffixes > map.pgm
 	@convert map.pgm map.png || echo "Couldn't convert PGM image to PNG - try loading in an image tool"
 	@echo
 	@echo '***' Finding likely 64 bit seeds for 48-bit suffixes...
 	@echo
-	./expand48to64random < output.seeds | sort -n > likely.seeds
+	./expand48to64random < output.suffixes | sort -n > likely.seeds
 
