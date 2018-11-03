@@ -48,14 +48,16 @@ int main(int argc, char** argv) {
   long seed;
   while (scanf("%ld\n", &seed) > 0) {
     long lowerInt = seed & mask_32bit;
-    long upperPartial = (seed >> 32) & mask_16bit;
+    long middle = lowerInt << 16;
+    long offset = (seed & (1L << 31)) >> 31;
+    long upperPartial = ((seed >> 32) + offset) & mask_16bit;
     int i;
     for (i = 0; i < (1 << 16); ++i) {
-      long state = (lowerInt << 16) | i;
+      long state = middle | i;
       long prevState = random_reverse(state);
       long lastOutput = prevState >> 16;
       if ((lastOutput & mask_16bit) == upperPartial) {
-        printf("%ld\n", ((lastOutput << 32) | lowerInt));
+        printf("%ld\n", (((lastOutput - offset) << 32) | lowerInt));
       }
     }
   }
